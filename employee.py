@@ -34,6 +34,7 @@ from sklearn.cluster import KMeans
 left_emp =  data[['satisfaction_level', 'last_evaluation']][data.left == 1]
 # Create groups using K-means clustering.
 kmeans = KMeans(n_clusters = 3, random_state = 0).fit(left_emp)
+fig=plt.subplots(figsize=(10,15))
 
 # Add new column "label" annd assign cluster labels.
 left_emp['label'] = kmeans.labels_
